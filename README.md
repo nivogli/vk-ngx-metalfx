@@ -13,7 +13,7 @@ Companion Windows NGX stand-in (`ngxcore`) and host Vulkan layer (`nvlayer`) for
    - Because `VkImage` handles pass through `winevulkan` 1:1, `EvaluateFeature` reads the real host `VkImage` handles and (with `NGXSTUB_MFX=1`) records `vkCmdPushConstants` with a reserved pipeline-layout value (`0x4D564B4D46583100`) and an 88-byte `mfx_info` payload.
 3. **Host Vulkan driver (KosmicKrisp with `MESA_KK_MFX=1`):**
    - Intercepts the magic `vkCmdPushConstants` / `vkCmdPushConstants2KHR` call and encodes `MTL4FXTemporalScaler` into the active Metal command buffer, bracketed by fenced compute encoders.
-   - See the KosmicKrisp Draft / RFC MR: `<Mesa MR URL>`.
+   - See the KosmicKrisp Draft / RFC MR: https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/46529
 
 ## Certificate / Authenticode requirement
 
